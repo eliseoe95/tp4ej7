@@ -1,24 +1,22 @@
 import { Container, ListGroupItem, Row, Col, Badge } from "react-bootstrap";
 import EmpleadoAvatar from './EmpleadoAvatar'
-const EmpleadoRow = () => {
+const EmpleadoRow = ({empleado}) => {
     return (
-        <>
         <ListGroupItem>
             <Container>
                 <Row>
-                    <Col>
-                    <EmpleadoAvatar>
-                    </EmpleadoAvatar>
-                    </Col>
-                    <Col>
-                    <p className="fw-bold">H</p>
-                    <p>H</p>
-                    <Badge pill bg='primary'>h</Badge>
-                    </Col>
+                        <Col>
+                        <EmpleadoAvatar empleado={empleado} >
+                        </EmpleadoAvatar>
+                        </Col>
+                        <Col>
+                        <p className="fw-bold">{empleado.fullName}</p>
+                        <p>{empleado.title}</p>
+                        <Badge pill bg='primary'>{empleado.department}</Badge>
+                        </Col>
                 </Row>
             </Container>
         </ListGroupItem>
-        </>
     );
 };
 
